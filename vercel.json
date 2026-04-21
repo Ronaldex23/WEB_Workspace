@@ -1,13 +1,11 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "TODOapp/package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/TODOapp/browser" } },
+    { "src": "API/index.js", "use": "@vercel/node" }
+  ],
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "BACKEND/index.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "FRONTEND/index.html"
-    }
+    { "source": "/api/(.*)", "destination": "API/index.js" },
+    { "source": "/(.*)", "destination": "TODOapp/index.html" }
   ]
 }
