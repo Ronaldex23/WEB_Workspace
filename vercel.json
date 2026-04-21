@@ -2,6 +2,6 @@
   "version": 2,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "api/index.js" },
-    { "source": "/(.*)", "destination": "/TODOapp/dist/TODOapp/browser/index.html" }
+    { "source": "/(.*)", "destination": "dist/TODOapp/browser/index.html" }
   ]
 }
