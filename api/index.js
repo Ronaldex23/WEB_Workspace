@@ -1,5 +1,5 @@
-const dns = require('dns');
-dns.setServers(['8.8.8.8', '1.1.1.1']);
+// const dns = require('dns');
+// dns.setServers(['8.8.8.8', '1.1.1.1']);
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -33,9 +33,5 @@ mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
 db.once('connected', () => console.log('Database Connected'));
-
-// Servidor
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server Started at ${PORT}`));
 
 module.exports = app;
