@@ -16,7 +16,7 @@ export class App {
   arrayDeTarefas = signal<Tarefa[]>([]);
   apiURL: string;
   constructor(private http: HttpClient) {
-    this.apiURL = 'http://localhost:3000';
+    this.apiURL = '';
     this.READ_tarefas();
   }
 
@@ -26,7 +26,6 @@ export class App {
       (resultado : any) => { console.log(resultado); this.READ_tarefas(); });
     
   }
-
 
   READ_tarefas() {
     this.http.get<Tarefa[]>(`${this.apiURL}/api/getAll`).subscribe(
